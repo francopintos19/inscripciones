@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apellido: MyString
+  nombre: MyString
+  id_tipo_doc: 1
+  doc: 1
+  direcc: MyString
+  codido_postal: 1
+  provincia: MyString
+  ciudad: MyString
+  celular: 1
+  email: MyString
+  profeccional: false
+  titulo_universitario: MyString
+  titulo_posgrado: MyString
+  especialidad: MyString
+  ocupacion: MyString
+  institucion: MyString
+  cargo: MyString
+  telefono_prof: 1
+  email_prof: MyString
+  almuerzo: false
+
+two:
+  apellido: MyString
+  nombre: MyString
+  id_tipo_doc: 1
+  doc: 1
+  direcc: MyString
+  codido_postal: 1
+  provincia: MyString
+  ciudad: MyString
+  celular: 1
+  email: MyString
+  profeccional: false
+  titulo_universitario: MyString
+  titulo_posgrado: MyString
+  especialidad: MyString
+  ocupacion: MyString
+  institucion: MyString
+  cargo: MyString
+  telefono_prof: 1
+  email_prof: MyString
+  almuerzo: false

@@ -1,0 +1,2 @@
+json.extract! persona, :id, :apellido, :nombre, :id_tipo_doc, :doc, :direcc, :codido_postal, :provincia, :ciudad, :celular, :email, :profeccional, :titulo_universitario, :titulo_posgrado, :especialidad, :ocupacion, :institucion, :cargo, :telefono_prof, :email_prof, :almuerzo, :created_at, :updated_at
+json.url persona_url(persona, format: :json)

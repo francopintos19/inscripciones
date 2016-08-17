@@ -1,0 +1,178 @@
+<%= form_for @persona, :html => { :class => "form-horizontal persona" } do |f| %>
+
+  <% if @persona.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%#= pluralize(@persona.errors.count, "error") %> Error:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @persona.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :apellido, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :apellido, :class => 'form-control', :required => true%>
+    </div>
+    <%=f.error_span(:apellido) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nombre, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:nombre) %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Tipo Documento", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :id_tipo_doc, TipoDoc.all.collect {|p| [ p.nombre, p.id ] }, { include_blank: false }, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:id_tipo_doc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :doc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field :doc, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:doc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :direcc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :direcc, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:direcc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :codido_postal, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field :codido_postal, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:codido_postal) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :provincia, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :provincia, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:provincia) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ciudad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ciudad, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:ciudad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :celular, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field :celular, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:celular) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control', :required => true %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :profesional, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :profesional, :class => 'checkbox' %>
+      <i>Si usted es un profesional seleccione esta opción. En caso de ser estudiante deje sin seleccionar.</i>
+    </div>
+    <%=f.error_span(:profesional) %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :titulo_universitario, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :titulo_universitario, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:titulo_universitario) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :titulo_posgrado, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :titulo_posgrado, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:titulo_posgrado) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :especialidad, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :especialidad, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:especialidad) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ocupacion, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ocupacion, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ocupacion) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :institucion, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :institucion, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:institucion) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cargo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cargo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cargo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefono_prof, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field :telefono_prof, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:telefono_prof) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email_prof, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email_prof, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email_prof) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :menu_jueves, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :menu_jueves, :class => 'checkbox' %>
+      <i>El menú del jueves tiene un costo de $60.- (Incluye bebidas)</i>
+    </div>
+    <%=f.error_span(:menu_jueves) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :menu_viernes, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :menu_viernes, :class => 'checkbox' %>
+      <i>El menú del viernes tiene un costo de $60.- (Incluye bebidas)</i>
+    </div>
+    <%=f.error_span(:menu_viernes) %>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit "Inscribirme al CPES", :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                root_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

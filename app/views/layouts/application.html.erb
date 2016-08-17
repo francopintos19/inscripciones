@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inscripciones CPES</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://dl.dropboxusercontent.com/u/83327675/favicon.ico" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%if flash[:notice] %><br>
+      <div class="alert alert-success" style="text-align: center">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <b><%=flash[:notice] %></b>
+      </div>
+  <%end%>
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><IMG SRC="https://dl.dropboxusercontent.com/u/83327675/logo_cpes.png" WIDTH=80>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Inicio</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<div class="container">
+	<%= yield %>
+</div>
+
+	<br>
+   	<footer class="footer">
+      <div class="container">
+        <center><p class="text-muted">Departamento de Sistemas <b>2016</b></p></center>
+      </div>
+    </footer>
+
+
+</body>
+</html>
