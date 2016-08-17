@@ -167,7 +167,15 @@
     </div>
     <%=f.error_span(:menu_viernes) %>
   </div>
-  <br>
+<br>
+<br>
+<center>
+<%= recaptcha_tags %> 
+<div class="g-recaptcha" data-sitekey="6LcGVCcTAAAAAJRPhtOetdSzBPRMuvXEtq7A5FL4"></div>
+</center>
+<br>
+<br>
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit "Inscribirme al CPES", :class => 'btn btn-primary' %>

@@ -31,7 +31,7 @@ class PersonasController < ApplicationController
     @persona = Persona.new(persona_params)
 
     respond_to do |format|
-      if @persona.save
+      if verify_recaptcha(model: @persona) &&  @persona.save
         format.html { redirect_to @persona, notice: 'Se ha inscripto correctamente al CPES.' }
         format.json { render :show, status: :created, location: @persona }
       else
